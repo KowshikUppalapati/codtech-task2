@@ -1,0 +1,74 @@
+class StudentGradeManager:
+    def __init__(self):
+        self.grades = {}
+
+    def add_grade(self, subject, grade):
+        if subject in self.grades:
+            self.grades[subject].append(grade)
+        else:
+            self.grades[subject] = [grade]
+
+    def calculate_average_grade(self, subject):
+        if subject in self.grades:
+            grades = self.grades[subject]
+            average_grade = sum(grades) / len(grades)
+            return average_grade
+        else:
+            return None
+
+    def display_grades(self):
+        for subject, grades in self.grades.items():
+            average_grade = self.calculate_average_grade(subject)
+            print(f"Subject: {subject}")
+            print(f"Grades: {grades}")
+            print(f"Average Grade: {average_grade:.2f}")
+            print(f"Letter Grade: {self.get_letter_grade(average_grade)}")
+            print(f"GPA: {self.get_gpa(average_grade)}")
+            print("------------------------")
+
+    def get_letter_grade(self, grade):
+        if grade >= 90:
+            return "A"
+        elif grade >= 80:
+            return "B"
+        elif grade >= 70:
+            return "C"
+        elif grade >= 60:
+            return "D"
+        else:
+            return "F"
+
+    def get_gpa(self, grade):
+        if grade >= 90:
+            return 4.0
+        elif grade >= 80:
+            return 3.0
+        elif grade >= 70:
+            return 2.0
+        elif grade >= 60:
+            return 1.0
+        else:
+            return 0.0
+
+def main():
+    grade_manager = StudentGradeManager()
+
+    while True:
+        print("1. Add Grade")
+        print("2. Display Grades")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            subject = input("Enter subject: ")
+            grade = float(input("Enter grade: "))
+            grade_manager.add_grade(subject, grade)
+        elif choice == "2":
+            grade_manager.display_grades()
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
