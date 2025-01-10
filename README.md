@@ -8,6 +8,9 @@
 
 **PROJECT NAME**:STUDENT GRADE TRACKER
 
+![Screenshot (120)](https://github.com/user-attachments/assets/065d4955-c969-45d4-b444-2ae66dd7b8ac)
+
+
 
 
 ### **Objective**
