@@ -6,7 +6,9 @@
 
 ### **Overview of the Code**
 
-**PROJECT NAME**:SIMPLE CALCULATIOR
+**PROJECT NAME**:STUDENT GRADE TRACKER
+
+
 
 ### **Objective**
 
